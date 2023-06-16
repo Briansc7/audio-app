@@ -3,7 +3,7 @@ import ProductDetail from "./ProductDetail";
 
 const ProductDetailContainer = () => {
   const { id } = useParams();
-  if (parseInt(id)) {
+  if (isProductIdValid(id)) {
     return (
       <div>
         <ProductDetail id={id} />
@@ -17,5 +17,9 @@ const ProductDetailContainer = () => {
     );
   }
 };
+
+function isProductIdValid(id) {
+  return parseInt(id);
+}
 
 export default ProductDetailContainer;

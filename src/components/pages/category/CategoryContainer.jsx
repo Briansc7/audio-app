@@ -3,7 +3,7 @@ import Category from "./Category";
 
 const CategoryContainer = () => {
   const { categoryName } = useParams();
-  if (categoryName.match(/^[a-zA-Z]+$/)) {
+  if (isCategoryNameValid(categoryName)) {
     return (
       <div>
         <Category categoryName={categoryName} />
@@ -17,5 +17,9 @@ const CategoryContainer = () => {
     );
   }
 };
+
+function isCategoryNameValid(categoryName) {
+  return categoryName.match(/^[a-zA-Z]+$/);
+}
 
 export default CategoryContainer;

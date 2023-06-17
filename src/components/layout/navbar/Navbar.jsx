@@ -22,7 +22,7 @@ const Navbar = () => {
             </IconButton>
             <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />
           </Box>
-          <Box>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />
             <Button color="inherit">Login</Button>
             <div>

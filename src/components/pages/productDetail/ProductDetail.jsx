@@ -1,7 +1,11 @@
-const ProductDetail = ({ id }) => {
+import CounterContainer from "../../common/counter/CounterContainer";
+
+const ProductDetail = ({ product, onAdd }) => {
   return (
     <div>
-      <h1>Página de ProductDetail de id: {id}</h1>
+      <h1>{product.name}</h1>
+      <h4>{product.description}</h4>
+      <CounterContainer onAdd={onAdd} />
     </div>
   );
 };

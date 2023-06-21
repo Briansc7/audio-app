@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ProductList from "./productList";
+import ProductList from "./ProductList";
 import { useParams } from "react-router-dom";
 import { getAllProducts } from "../../../services/productsServices";
 

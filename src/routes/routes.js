@@ -3,8 +3,7 @@ import LoginContainer from "../components/pages/login/LoginContainer";
 import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
 import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
-import CategoryContainer from "../components/pages/category/CategoryContainer";
-import productListContainer from "../components/pages/productList/productListContainer";
+import productListContainer from "../components/pages/productList/ProductListContainer";
 
 export const menuRoutes = [
   {

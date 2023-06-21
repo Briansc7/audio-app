@@ -4,6 +4,7 @@ import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
 import RegisterContainer from "../components/pages/register/RegisterContainer";
 import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer";
 import CategoryContainer from "../components/pages/category/CategoryContainer";
+import productListContainer from "../components/pages/productList/productListContainer";
 
 export const menuRoutes = [
   {
@@ -32,8 +33,8 @@ export const menuRoutes = [
     Element: ProductDetailContainer,
   },
   {
-    id: "category",
+    id: "products",
     path: "/category/:categoryName",
-    Element: CategoryContainer,
+    Element: productListContainer,
   },
 ];

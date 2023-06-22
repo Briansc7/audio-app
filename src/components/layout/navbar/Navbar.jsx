@@ -4,8 +4,9 @@ import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
 
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import CustomModalContainer from "../../common/customModal/customModalContainer";
 
-const Navbar = () => {
+const Navbar = ({ handleClose, handleOpen, open }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -31,8 +32,10 @@ const Navbar = () => {
               <Link>SPEAKERS</Link>
               <Link>EARPHONES</Link>
             </div>
-
-            <ShoppingCartOutlinedIcon />
+            <IconButton onClick={handleOpen}>
+              <ShoppingCartOutlinedIcon />
+            </IconButton>
+            <CustomModalContainer open={open} handleClose={handleClose} />
           </Box>
         </Toolbar>
       </AppBar>

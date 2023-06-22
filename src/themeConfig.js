@@ -10,5 +10,9 @@ export const customTheme = createTheme({
       main: "#101010",
       second: "#F1F1F1",
     },
+    background: {
+      main: "#FFFFFF",
+      second: "#000000",
+    },
   },
 });

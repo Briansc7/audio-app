@@ -5,3 +5,9 @@ export const getAllProducts = async () => {
   let res = await promise;
   return res.data;
 };
+
+export const getProductById = async (id) => {
+  let promise = axiosProducts.get(`/${id}`);
+  let res = await promise;
+  return res.data;
+};

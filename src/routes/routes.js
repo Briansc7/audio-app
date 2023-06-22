@@ -27,7 +27,7 @@ export const menuRoutes = [
     Element: RegisterContainer,
   },
   {
-    id: "productDetail",
+    id: "detail",
     path: "/productDetail/:id",
     Element: ProductDetailContainer,
   },

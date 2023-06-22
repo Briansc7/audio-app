@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-const productList = () => {
+const productList = ({ products }) => {
   return (
     <div>
       <h1>Aca van los productos</h1>
-      {productList.map((product, i) => {
+      {products.map((product, i) => {
         return (
           <div key={product.id}>
             <h1>{product.name}</h1>

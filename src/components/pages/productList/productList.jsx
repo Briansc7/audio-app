@@ -1,5 +1,7 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import ProductCardContainer from "../../common/productCard/ProductCardContainer";
+
 const productList = ({ products }) => {
   return (
     <div>
@@ -7,18 +9,7 @@ const productList = ({ products }) => {
       {products.map((product, i) => {
         return (
           <div key={product.id}>
-            <h1>{product.name}</h1>
-            <Link to={`/productDetail/${product.id}`}>
-              <Button
-                sx={{
-                  width: "160px",
-                  padding: "10px",
-                }}
-                variant="contained"
-              >
-                See Product
-              </Button>
-            </Link>
+            <ProductCardContainer product={product} index={i} />
           </div>
         );
       })}

@@ -18,7 +18,7 @@ const productListContainer = () => {
     getData();
   }, [categoryName]);
 
-  return <ProductList products={products} />;
+  return <ProductList products={products} categoryName={categoryName} />;
 };
 
 export default productListContainer;

@@ -9,7 +9,7 @@ import CustomModalContainer from "../../common/customModal/customModalContainer"
 const Navbar = ({ handleClose, handleOpen, open, menu }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "background.second" }}>
         <Toolbar>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton

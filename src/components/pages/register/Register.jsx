@@ -1,7 +1,11 @@
+import { TextField } from "@mui/material";
+
 const Register = () => {
   return (
     <div>
-      <h1>Página de Register</h1>
+      <form>
+        <TextField label="email" />
+      </form>
     </div>
   );
 };

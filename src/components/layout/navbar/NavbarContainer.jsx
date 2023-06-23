@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
+import { menu } from "../../../routes/navigation";
 
 const NavbarContainer = () => {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,12 @@ const NavbarContainer = () => {
   };
   return (
     <div>
-      <Navbar open={open} handleOpen={handleOpen} handleClose={handleClose} />
+      <Navbar
+        open={open}
+        handleOpen={handleOpen}
+        handleClose={handleClose}
+        menu={menu}
+      />
     </div>
   );
 };

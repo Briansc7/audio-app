@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CustomModalContainer from "../../common/customModal/customModalContainer";
 
-const Navbar = ({ handleClose, handleOpen, open }) => {
+const Navbar = ({ handleClose, handleOpen, open, menu }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -26,12 +26,15 @@ const Navbar = ({ handleClose, handleOpen, open }) => {
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />
             <Button color="inherit">Login</Button>
-            <div>
-              <Link>HOME</Link>
-              <Link>HEADPHONES</Link>
-              <Link>SPEAKERS</Link>
-              <Link>EARPHONES</Link>
-            </div>
+            <Box>
+              {menu.map((item) => {
+                return (
+                  <Link key={item.id} sx={{ flexGrow: 1 }} to={item.path}>
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </Box>
             <IconButton onClick={handleOpen}>
               <ShoppingCartOutlinedIcon />
             </IconButton>

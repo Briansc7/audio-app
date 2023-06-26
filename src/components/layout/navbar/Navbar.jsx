@@ -36,7 +36,10 @@ const Navbar = ({ handleClose, handleOpen, open, menu }) => {
               },
               justifyContent: "space-between",
               width: "100vw",
-              padding: "50px",
+              paddingLeft: "50px",
+              paddingRight: "50px",
+              paddingBottom: "5px",
+              paddingTop: "5px",
             }}
           >
             <img src="https://res.cloudinary.com/dwqrlr45w/image/upload/v1682637939/audiophileEcommerce/shared/desktop/logo_qnvapf.svg" />

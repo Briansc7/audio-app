@@ -4,4 +4,7 @@ export const inputsType = {
   text: {
     Element: TextInputContainer,
   },
+  email: {
+    Element: TextInputContainer,
+  },
 };

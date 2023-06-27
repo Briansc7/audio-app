@@ -1,7 +1,12 @@
-const Checkout = () => {
+import CustomFormContainer from "../../common/customForm/CustomFormContainer";
+
+const Checkout = ({ formInfo, checkoutInputsInfo }) => {
   return (
     <div>
-      <h1>Página de Checkout</h1>
+      <CustomFormContainer
+        formInfo={formInfo}
+        inputsInfo={checkoutInputsInfo}
+      />
     </div>
   );
 };

@@ -3,15 +3,18 @@ export const checkoutInputsInfo = [
     sectionName: "billing details",
     inputs: [
       {
-        inputName: "name",
+        name: "name",
+        label: "Name",
         type: "text",
       },
       {
-        inputName: "email address",
+        name: "email address",
+        label: "Email Address",
         type: "email",
       },
       {
-        inputName: "phone number",
+        name: "phone number",
+        label: "Phone Number",
         type: "text",
       },
     ],
@@ -20,19 +23,23 @@ export const checkoutInputsInfo = [
     sectionName: "shipping info",
     inputs: [
       {
-        inputName: "adress",
+        name: "adress",
+        label: "Adress",
         type: "text",
       },
       {
-        inputName: "zip code",
+        name: "zip code",
+        label: "Zip Code",
         type: "text",
       },
       {
-        inputName: "city",
+        name: "city",
+        label: "City",
         type: "text",
       },
       {
-        inputName: "country",
+        name: "country",
+        label: "Country",
         type: "text",
       },
     ],
@@ -41,17 +48,19 @@ export const checkoutInputsInfo = [
     sectionName: "payment details",
     inputs: [
       {
-        inputName: "payment method",
+        name: "payment method",
         type: "radio",
         options: ["e-Money", "Cash on Delivery"],
         subInputs: [
           [
             {
-              inputName: "e-Money Number",
+              name: "e-Money Number",
+              label: "e-Money Number",
               type: "text",
             },
             {
-              inputName: "e-Money PIN",
+              name: "e-Money PIN",
+              label: "e-Money PIN",
               type: "text",
             },
           ],

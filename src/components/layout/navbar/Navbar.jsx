@@ -2,6 +2,7 @@ import { AppBar, Box, Button, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CustomModalContainer from "../../common/customModal/customModalContainer";
@@ -54,8 +55,12 @@ const Navbar = ({ handleClose, handleOpen, open, menu }) => {
               })}
             </Box>
             <Box>
-              <Button color="inherit">Signup</Button>
-              <Button color="inherit">Login</Button>
+              <Button color="inherit" component={Link} to="/register">
+                Signup
+              </Button>
+              <Button color="inherit" component={Link} to="/login">
+                Login
+              </Button>
               <IconButton onClick={handleOpen}>
                 <ShoppingCartOutlinedIcon sx={{ color: "white" }} />
               </IconButton>

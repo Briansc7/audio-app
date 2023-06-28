@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 const Home = () => {
   return (
     <div>
-      <Typography varaint="h1" color="secondary.second">
+      <Typography varaint="h1" color="secondary.main">
         Pagina Home
       </Typography>
     </div>

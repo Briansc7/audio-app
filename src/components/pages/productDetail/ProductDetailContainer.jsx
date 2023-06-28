@@ -2,10 +2,14 @@ import { useParams } from "react-router-dom";
 import ProductDetail from "./ProductDetail";
 import { useEffect, useState } from "react";
 import { getProductById } from "../../../services/productsServices";
+import { addToCart } from "../../../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductDetailContainer = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+
+  const dispatch = useDispatch();
 
   const onAdd = (quantity) => {
     let data = {
@@ -13,7 +17,7 @@ const ProductDetailContainer = () => {
       quantity: quantity,
     };
 
-    console.log("agregue al carrito: ", data);
+    dispatch(addToCart(data));
   };
 
   useEffect(() => {

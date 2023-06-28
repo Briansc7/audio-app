@@ -4,7 +4,7 @@ import { BotonNaranja } from "../../custom/customComponents";
 
 const style = {
   position: "absolute",
-  top: "15%",
+  top: "30%",
   right: "0%",
   transform: "translate(-50%, -50%)",
   width: 400,

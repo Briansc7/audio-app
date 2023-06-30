@@ -1,13 +1,13 @@
-import { AppBar, Box, Button, Toolbar } from "@mui/material";
+import { AppBar, Badge, Box, Button, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import CustomModalContainer from "../../common/customModal/customModalContainer";
+import CustomModalContainer from "../../common/customModal/CustomModalContainer";
 
-const Navbar = ({ handleClose, handleOpen, open, menu }) => {
+const Navbar = ({ handleClose, handleOpen, open, menu, cart }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -61,9 +61,11 @@ const Navbar = ({ handleClose, handleOpen, open, menu }) => {
               <Button color="inherit" component={Link} to="/login">
                 Login
               </Button>
-              <IconButton onClick={handleOpen}>
-                <ShoppingCartOutlinedIcon sx={{ color: "white" }} />
-              </IconButton>
+              <Badge badgeContent={cart.length} color="primary">
+                <IconButton onClick={handleOpen}>
+                  <ShoppingCartOutlinedIcon sx={{ color: "white" }} />
+                </IconButton>
+              </Badge>
               <CustomModalContainer open={open} handleClose={handleClose} />
             </Box>
           </Box>

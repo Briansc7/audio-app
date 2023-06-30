@@ -55,11 +55,41 @@ export const cartSlice = createSlice({
 
       state.total = total;
     },
+    decrementOneById: (state, action) => {
+      const id = action.payload;
+      const newArray = state.cart.map((prod) => {
+        if (prod.id === id) {
+          return { ...prod, quantity: prod.quantity - 1 };
+        } else {
+          return prod;
+        }
+      });
+      state.cart = newArray;
+      localStorage.setItem("cart", JSON.stringify(newArray));
+    },
+    incrementOneById: (state, action) => {
+      const id = action.payload;
+      const newArray = state.cart.map((prod) => {
+        if (prod.id === id) {
+          return { ...prod, quantity: prod.quantity + 1 };
+        } else {
+          return prod;
+        }
+      });
+      state.cart = newArray;
+      localStorage.setItem("cart", JSON.stringify(newArray));
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, clearCart, removeById, getTotalPrice } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  clearCart,
+  removeById,
+  getTotalPrice,
+  decrementOneById,
+  incrementOneById,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

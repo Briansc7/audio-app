@@ -4,6 +4,7 @@ import { BotonNaranja } from "../../custom/customComponents";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { clearCart, removeById } from "../../../store/cartSlice";
+import CartCounterContainer from "../cartCounter/CartCounterContainer";
 
 const style = {
   position: "absolute",
@@ -47,7 +48,7 @@ const CustomModal = ({ handleClose, open, cart, dispatch, total }) => {
                 <h4>{prod.name}</h4>
                 <h4>{prod.price}</h4>
               </div>
-              {/* counter */}
+              <CartCounterContainer id={prod.id} quantity={prod.quantity} />
             </div>
           ))}
           <Link to="/checkout">

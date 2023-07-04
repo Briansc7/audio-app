@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { BotonNaranja } from "../../custom/customComponents";
 
-const Counter = ({ counter, setCounter, onAdd }) => {
+const Counter = ({ counter, setCounter, onAdd, stock }) => {
   return (
     <div>
       <Button
@@ -25,6 +25,7 @@ const Counter = ({ counter, setCounter, onAdd }) => {
           height: "20px",
           fontSize: "2rem",
         }}
+        disabled={counter >= stock ? false : true}
       >
         +
       </Button>

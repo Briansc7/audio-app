@@ -7,6 +7,7 @@ const CartCounter = ({
   decrementOneById,
   incrementOneById,
   dispatch,
+  stock,
 }) => {
   return (
     <div>
@@ -44,6 +45,7 @@ const CartCounter = ({
             minWidth: "20px",
             height: "20px",
           }}
+          disabled={quantity >= stock ? true : false}
         >
           +
         </Button>

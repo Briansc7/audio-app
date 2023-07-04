@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { decrementOneById, incrementOneById } from "../../../store/cartSlice";
 import CartCounter from "./CartCounter";
 
-const CartCounterContainer = ({ id, quantity }) => {
+const CartCounterContainer = ({ id, quantity, stock }) => {
   const dispatch = useDispatch();
   return (
     <CartCounter
@@ -11,6 +11,7 @@ const CartCounterContainer = ({ id, quantity }) => {
       decrementOneById={decrementOneById}
       incrementOneById={incrementOneById}
       dispatch={dispatch}
+      stock={stock}
     />
   );
 };

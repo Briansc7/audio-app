@@ -68,6 +68,7 @@ const Navbar = ({ handleClose, handleOpen, open, menu, cart }) => {
               </Badge>
               <CustomModalContainer open={open} handleClose={handleClose} />
             </Box>
+            <Link to="/dashboard">Ir al dashboard</Link>
           </Box>
         </Toolbar>
       </AppBar>

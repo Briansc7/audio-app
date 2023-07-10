@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getProductById } from "../../../services/productsServices";
 import { addToCart } from "../../../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { db } from "../../../firebaseConfig";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 const ProductDetailContainer = () => {
   const { id } = useParams();
@@ -26,9 +28,11 @@ const ProductDetailContainer = () => {
   };
 
   useEffect(() => {
+    let refCollection = collection(db, "products");
+    let refDoc = doc(refCollection, id);
     const getData = async () => {
-      let data = await getProductById(id);
-      setProduct(data);
+      let res = await getDoc(refDoc);
+      setProduct({ id: res.id, ...res.data() });
     };
 
     getData();
@@ -54,7 +58,7 @@ const ProductDetailContainer = () => {
 };
 
 function isProductIdValid(id) {
-  return parseInt(id);
+  return true;
 }
 
 export default ProductDetailContainer;

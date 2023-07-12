@@ -2,9 +2,10 @@ import { useState } from "react";
 import Login from "./Login";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { login, loginWithGoogle } from "../../../firebaseConfig";
+import { loginWithGoogle } from "../../../firebaseConfig";
 import { loginRedux } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
+import { login, loginGoogle } from "../../../store/authThunk";
 
 const LoginContainer = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,14 +21,8 @@ const LoginContainer = () => {
       email: "",
       password: "",
     },
-    onSubmit: async (data) => {
-      console.log("se envio el formulario", data);
-      //aca llamaria a firebase para hacer authenticacion del usuario
-      let result = await login(data);
-
-      console.log(result);
-
-      dispatch(loginRedux(result.user));
+    onSubmit: (data) => {
+      dispatch(login(data)); //ya no hace falta que sea asincrona porque el thunk lo va a manejar
     },
     validateOnChange: false,
     validationSchema: Yup.object({
@@ -56,7 +51,9 @@ const LoginContainer = () => {
         errors={errors}
       />
 
-      <button onClick={loginWithGoogleFromLogin}>Ingresar con google</button>
+      <button onClick={() => dispatch(loginGoogle())}>
+        Ingresar con google
+      </button>
     </>
   );
 };

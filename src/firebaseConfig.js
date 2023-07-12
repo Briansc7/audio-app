@@ -30,7 +30,7 @@ const auth = getAuth(app); //export methods instead of this
 
 //Login
 
-export const login = async ({ email, password }) => {
+export const onSingIn = async ({ email, password }) => {
   try {
     let res = await signInWithEmailAndPassword(auth, email, password);
     return res;

@@ -1,4 +1,5 @@
-import { register } from "../../../firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
+import { db, register } from "../../../firebaseConfig";
 import Register from "./Register";
 
 const RegisterContainer = () => {
@@ -7,7 +8,16 @@ const RegisterContainer = () => {
       email: "newUser@gmail.com",
       password: "123456",
     });
-    console.log(res);
+    let data = {
+      email: "pepeperez@gmail.com",
+      displayName: "Pepe Perez",
+      photoUrl:
+        "https://nattivos.com/wp-content/uploads/2017/11/imagen-personal.jpg",
+      rol: "customer",
+    };
+
+    const usersCollection = collection(db, "users");
+    addDoc(usersCollection, data);
   };
 
   return (

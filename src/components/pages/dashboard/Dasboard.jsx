@@ -23,6 +23,7 @@ const Dasboard = ({
   handleClose,
   disabled,
   data,
+  setChangesProducts,
 }) => {
   return (
     <div>
@@ -66,12 +67,15 @@ const Dasboard = ({
           </TableBody>
         </Table>
       </TableContainer>
-      <ModalDashboard
-        open={open}
-        handleClose={handleClose}
-        data={data}
-        disabled={disabled}
-      />
+      {open && (
+        <ModalDashboard
+          open={open}
+          handleClose={handleClose}
+          data={data}
+          disabled={disabled}
+          setChangesProducts={setChangesProducts}
+        />
+      )}
     </div>
   );
 };

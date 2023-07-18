@@ -1,11 +1,34 @@
+import { Button } from "@mui/material";
 import { BotonNaranja } from "../../custom/customComponents";
 
-const Counter = ({ counter, setCounter, onAdd }) => {
+const Counter = ({ counter, setCounter, onAdd, stock }) => {
   return (
     <div>
-      <button onClick={() => setCounter(counter - 1)}>-</button>
+      <Button
+        onClick={() => setCounter(counter - 1)}
+        sx={{
+          color: "primary.main",
+          minWidth: "20px",
+          height: "20px",
+          fontSize: "2rem",
+        }}
+        disabled={counter > 1 ? false : true}
+      >
+        -
+      </Button>
       <h5>{counter}</h5>
-      <button onClick={() => setCounter(counter + 1)}>+</button>
+      <Button
+        onClick={() => setCounter(counter + 1)}
+        sx={{
+          color: "primary.main",
+          minWidth: "20px",
+          height: "20px",
+          fontSize: "2rem",
+        }}
+        disabled={counter >= stock ? false : true}
+      >
+        +
+      </Button>
 
       <BotonNaranja variant="contained" onClick={() => onAdd(counter)}>
         Add to Cart

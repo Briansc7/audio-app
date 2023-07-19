@@ -11,6 +11,10 @@ const DasboardContainer = () => {
   const [disabled, setDisabled] = useState(false);
   const [data, setData] = useState({});
   const [changesProducts, setChangesProducts] = useState(false);
+  const [openCreate, setOpenCreate] = useState(false);
+  const handleCloseCreate = () => {
+    setOpenCreate(false);
+  };
   const handleClose = () => {
     setOpen(false);
   };
@@ -71,6 +75,9 @@ const DasboardContainer = () => {
     disabled,
     data,
     setChangesProducts,
+    openCreate,
+    handleCloseCreate,
+    setOpenCreate,
   };
 
   return <Dasboard {...props} />;

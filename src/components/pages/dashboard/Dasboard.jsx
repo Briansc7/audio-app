@@ -9,10 +9,13 @@ import {
   TableRow,
 } from "@mui/material";
 
+import { Link } from "react-router-dom";
+
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ModalDashboard from "../../common/modalDashboard/ModalDashboard";
+import CreateProductModal from "../../common/createProductModal/createProductModal";
 
 const Dasboard = ({
   products,
@@ -24,10 +27,17 @@ const Dasboard = ({
   disabled,
   data,
   setChangesProducts,
+  openCreate,
+  handleCloseCreate,
+  setOpenCreate,
 }) => {
   return (
     <div>
       <h1>Aca se manipulan los datos desde admin</h1>
+
+      <Link to="/dashboardUsers">Ir al CRUD de usuarios</Link>
+      <button onClick={() => setOpenCreate(true)}>Agregar Productos</button>
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -76,6 +86,7 @@ const Dasboard = ({
           setChangesProducts={setChangesProducts}
         />
       )}
+      <CreateProductModal open={openCreate} handleClose={handleCloseCreate} />
     </div>
   );
 };

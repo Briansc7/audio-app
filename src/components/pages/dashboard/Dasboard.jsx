@@ -15,7 +15,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ModalDashboard from "../../common/modalDashboard/ModalDashboard";
-import CreateProductModal from "../../common/createProductModal/createProductModal";
+import CreateProductModal from "../../common/createProductModal/CreateProductModal";
 
 const Dasboard = ({
   products,

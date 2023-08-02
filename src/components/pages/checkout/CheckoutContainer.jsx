@@ -18,7 +18,7 @@ const CheckoutContainer = () => {
   const createPreference = async () => {
     try {
       const response = await axios.post(
-        "https://back-mp-sable.vercel.app/create_preference",
+        import.meta.env.VITE_MP_BACKEND_HOST + "/create_preference",
         [
           {
             title: "zapatilla puma",

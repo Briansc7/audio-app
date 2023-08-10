@@ -1,5 +1,6 @@
 import { AppBar, Badge, Box, Button, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
+import styles from "./Footer.module.css";
 
 const Footer = ({ menu }) => {
   return (
@@ -10,7 +11,7 @@ const Footer = ({ menu }) => {
           backgroundColor: "background.second",
         }}
       >
-        <Toolbar>
+        <Toolbar className={styles.footerContainer}>
           <Box sx={{ display: "flex", gap: "50px" }}>
             {menu.map((item) => {
               return (
